@@ -20,7 +20,7 @@ myCharacters = { Garrari: "Paladin", Father_Tubbins: "Cleric", Wit: "Bard" }
 
 # Adding to a Hash
 
-myCharacters[:Rangrim] = "Trickery Domain Cleric"
+# myCharacters[:Rangrim] = "Trickery Domain Cleric"
 
 # puts myCharacters
 

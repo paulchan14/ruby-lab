@@ -17,7 +17,7 @@ loot = [longsword, coin, staff]
 
 # << (Shovel operator) adds an item to the end of the array 
 
-# loot << dagger 
+loot << dagger 
 
 
 
@@ -61,7 +61,7 @@ loot = [longsword, coin, staff]
 
 # First and Last
 
-party = ["Ranger", "Bard", "Cleric", "Paladin"]
+# party = ["Ranger", "Bard", "Cleric", "Paladin"]
 
-puts party.first
-puts party.last
+# puts party.first
+# puts party.last

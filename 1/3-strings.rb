@@ -8,15 +8,15 @@
 baldur = "Baldur's"
 gate = "Gate"
 
-str = baldur + " " + gate
+# str = baldur + " " + gate
 
-# str = “ha” * 4 
+# str = "ha" * 4 
 
 # Common string methods:
 
 yeOldeStr = "dungeon"
 
-# str = yeOldeStr.upcase
+str = yeOldeStr.upcase
 
 # str = yeOldeStr.capitalize
 

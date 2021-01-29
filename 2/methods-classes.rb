@@ -3,8 +3,9 @@
 
 # Defining a method
 def attack(target, weapon)
-  if weapon.swing(target).last
-   puts "It hits for #{weapon.damage} damage!"
+  roll, hit = weapon.swing(target)
+  if hit
+   puts "You rolled a #{roll}. You hit for #{weapon.damage} damage!"
    
   else
    puts "You missed!"
@@ -16,10 +17,10 @@ end
  # If you don't use the return statement earlier, 
  # the last evaluated statement will be the returned object
 
-# Names should use PascalCase
-
-# Methods should use snake_case
-
+ # Methods should use snake_case
+ 
+ 
+ # Names should use PascalCase
 class Creature
   def initialize(name, health, armorClass)
     @name = name
@@ -27,9 +28,7 @@ class Creature
     @armorClass = armorClass
   end
 
-    def name
-      @name
-    end
+    attr_accessor :name
 
     def hp
       @health
@@ -42,7 +41,8 @@ end
 
 kobold = Creature.new("Kobold", 11, 13)
 
-# puts kobold.hp
+kobold.name = "Frog"
+puts kobold.name
 
 
 class Weapon
@@ -69,4 +69,4 @@ longsword = Weapon.new("Longsword", 5)
 
 # puts longsword.swing(kobold)
 
-puts attack(kobold, longsword)
+# puts attack(kobold, longsword)
