@@ -1,5 +1,6 @@
 require 'tty-prompt'
 require './Die'
+require './Utilities'
 require './artwork'
 require './diceTable'
 
@@ -36,14 +37,17 @@ while keepRollingDice
     sleep(1)
 
     diceRoller = Die.new(sides)
-    result, total = diceRoller.roll(bonus)
+    utils = Utilities.new()
+
+    natRoll = diceRoller.roll()
+    rollWithBonus = utils.addBonus(natRoll, bonus)
 
     crit = ""
 
-    if result === 1
+    if utils.isCritMiss(natRoll)
       crit = ", a critical miss!"
       isCritMiss = true
-    elsif result === 20
+    elsif utils.isCritHit(natRoll)
       crit = ", a critical hit!!"
     end
 
@@ -52,7 +56,7 @@ while keepRollingDice
 
     rollMessage = ""
 
-    if isCritHit & sides === 20
+    if isCritHit && sides === 20
       rollMessage = "Great job!!"
     elsif isCritMiss
       rollMessage = "Better luck next time!"
